@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <div id='header'>
+      <div class='logo'>
+        <h1>CIS 197</h1>
+        <img id='html-img' src='http://eloquentjavascript.net/1st_edition/img/html.png' alt='HTML diagram'>
+      </div>
+    </div>
+
+    <div id='container'>
+      <h1 class='another'>Content</h1>
+      <p id='para' class='more' data-contentId='1' >More Content in a Paragraph.</p>
+    </div>
+
+    <div id='footer'>
+      <h1 class='another'>Even more content in the footer.</h1>
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      /* BASIC JS API */
+      // Selection
+      var pTag = document.getElementById('para');
+      var imgTag = document.getElementById('html-img');
+      var divs = document.getElementsByTagName('div');
+      var anothers = document.getElementsByClassName('another');
+
+      // DOM Manipulation
+      // Attributes
+      imgTag.setAttribute('src', 'http://i.imgur.com/3lF0qm1.jpg');
+      console.log( imgTag.getAttribute('src') );
+
+      // Styles
+      pTag.style.color = 'red';
+      console.log( pTag.style.color );
+
+      // Changing content
+      pTag.innerHTML = 'Changed the content with JS.';
+      console.log( pTag.innerHTML );
+
+      // Creating nodes
+      var newNode = document.createElement('h1');
+      newNode.innerHTML = 'New H1 node';
+      divs[0].insertBefore(newNode);
+
+      /* JQUERY */
+      // Selection
+      var $pTag = $('#para');
+      var $imgTag = $('#html-img');
+      var $divs = $('div');
+      var anothers = $('.another');
+
+      // DOM Manipulation
+      // Attributes
+      $imgTag.attr('src', 'http://eloquentjavascript.net/1st_edition/img/html.png');
+      console.log( $imgTag.attr('src') );
+
+      // Styles
+      $pTag.css('color', 'blue');
+      console.log( $pTag.css('color') );
+
+      // Changing content
+      $pTag.html('Just changed the content with some slick jQuery magic');
+      console.log( $pTag.html() );
+
+      // Creating nodes
+      $divs.eq(0).append('<h1>New H1 node by jQuery</h1>');
+    </script>
+  </body>
+
+</html>
