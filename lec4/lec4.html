@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='lib/js/jquery-1.11.1.js'></script>
+    <script>
+      // DOM ready event
+      $(document).ready(function() {
+        $('div').on('click', function(e) {
+          e.stopPropagation();
+          var $this = $(this);
+          console.log( $this.css('background-color') );
+        });
+
+        $('p').on('click', function(e) {
+          // Stop Event Propagation
+          e.stopPropagation();
+          alert('The mouse button you pressed was ' + e.which);
+        });
+        
+        // Browser Events
+        $('input').on('keypress', function(e) {
+          console.log('The key you pressed was ' + e.which);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div style="width:100%; height: 50px; background-color: red;">
+      <p style='border: 1px solid blue;'>This is a p tag</p>
+    </div>
+
+    <div class='hw' style="width:50%; height: 50px; background-color: blue;"></div>
+
+    <div class='hw' style="width:100%; height: 150px; background-color: green;"></div>
+
+    <input id='input' type='text'>
+
+  </body>
+</html>
