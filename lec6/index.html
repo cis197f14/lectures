@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>Lecture 6</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+
+    <div id="todos"></div>
+
+    <!-- underscore templates -->
+
+    <script type='text/template' id='app-template'>
+      <input id='todo-text' type='text' placeholder='Add a todo'>
+      <ul id='todo-list'></ul>
+      <div><%= collection.remaining() %> Remaining</div>
+    </script>
+
+    <script type='text/template' id='todo-template'>
+      <input class='todo-check' type='checkbox' <%= done ? 'checked=checked' : '' %>>
+      <%= text %> <%= done ? '✓' : '' %>
+    </script>
+
+    <!-- load scripts -->
+
+    <script src="lib/js/jquery-1.11.0.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script src='todos.js'></script>
+  </body>
+</html>
