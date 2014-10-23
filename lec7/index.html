@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>Lecture 7</title>
+
+    <link rel="stylesheet" type="text/css" href="todos.css">
+  </head>
+  <body>
+
+    <div id='todoapp'>
+      <header>
+        <h1>Todos</h1>
+      </header>
+      <input id='new-todo' type='text' placeholder='What needs to be done?'>
+      <section id='main'>
+        <input id='toggle-all' type='checkbox'>
+        <label for='toggle-all'>Mark all as complete</label>
+        <ul id='todo-list'></ul>
+      </section>
+      <footer></footer>
+    </div>
+
+    <!-- underscore templates -->
+
+    <script type='text/template' id='stats-template'>
+      <div class='todo-count'>
+        <strong><%= remaining %></strong> items left
+      </div>
+    </script>
+
+    <script type='text/template' id='item-template'>
+      <div class='view'>
+        <input class='toggle' type='checkbox' <%= done ? 'checked="checked"' : '' %>>
+        <label><%- title %></label>
+        <a class='destroy'></a>
+      </div>
+      <input class='edit' type='text' value='<%= title %>'>
+    </script>
+
+    <!-- load scripts -->
+
+    <script src="lib/js/jquery-1.11.0.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script src='todos.js'></script>
+  </body>
+</html>
