@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>Lecture 8</title>
+  </head>
+  <body>
+    <a href='#'>Home</a> | 
+    <a href='#test'>Test</a> |
+    <a href='#params/5/6'>Params</a>
+
+    <script src="lib/js/jquery-1.11.0.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script>
+      // Backbone Router
+      var Router = Backbone.Router.extend({
+        routes: {
+          '': 'index',
+          'test': 'test',
+          'params/:row/:col': 'params'
+        },
+        index: function() {
+          console.log('We are at the index.');
+        },
+        test: function() {
+          console.log('This is the test route');
+        },
+        params: function(row, col) {
+          console.log('The row is ' + row);
+          console.log('The column is ' + col);
+        }
+      });
+
+      var myRouter = new Router();
+
+      Backbone.history.start();
+    </script>
+  </body>
+</html>
