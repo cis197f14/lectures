@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <title>2 Way Data Binding</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div id='app'>
+      <input type='text' id='input' autofocus>
+      <span id='text'>Hello world</span>
+    </div>
+
+    <!-- load scripts -->
+    <script src="lib/js/jquery-1.11.1.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script>
+      var $input = $('#input');
+      var $text = $('#text');
+      var text = {
+        value: '',
+        set: function(newText) {
+          this.value = newText;
+          $input.val(this.value);
+          $text.html(this.value);
+        }
+      };
+      $input.on('keyup', function() {
+        text.set($input.val());
+      });
+    </script>
+    <script>
+      var AppView = Backbone.View.extend({
+        events: {
+          'keyup #input': 'input'
+        },
+        initialize: function($el) {
+          this.setElement($el);
+          this.$input = this.$el.find('#input');
+          this.$text = this.$el.find('#text');
+
+          this.model = new Backbone.Model();
+          this.listenTo(this.model, 'change', this.render);
+        },
+        input: function() {
+          this.model.set('text', this.$input.val());
+        },
+        render: function() {
+          var text = this.model.get('text') || '';
+          this.$input.val(text);
+          this.$text.html(text);
+          return this;
+        }
+      });
+      // var appView = new AppView($('#app'));
+    </script>
+  </body>
+</html>

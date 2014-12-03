@@ -1,0 +1,123 @@
+/*
+ * Globals & CSS reset
+ * ---------------------------------------------------------------------------
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:link {
+  color: #084080;
+  text-decoration: none;
+}
+
+  a:link:hover {
+    color: #052850;
+    text-decoration: underline;
+  }
+
+  a:link:visited {
+    color: #021020;
+  }
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+#input {
+  -webkit-appearance: none;
+  -webkit-box-shadow: rgb(221, 221, 221) 0px 1px 3px 0px inset;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  -webkit-writing-mode: horizontal-tb;
+  background-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(204, 204, 204);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(204, 204, 204);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(204, 204, 204);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(204, 204, 204);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: rgb(221, 221, 221) 0px 1px 3px 0px inset;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: auto;
+  font-size: 16px;
+  height: 37px;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 8px;
+  padding-left: 9.6px;
+  padding-right: 9.6px;
+  padding-top: 8px;
+  text-align: start;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: baseline;
+  word-spacing: 0px;
+  width: 100%;
+  outline: none;
+}
+
+#input:focus {
+  border-color: #129FEA;
+}
+
+#suggestions {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+#suggestions li {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
