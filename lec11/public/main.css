@@ -1,0 +1,55 @@
+#content {
+  width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.comment {
+  padding: 10px;
+  border-top: 1px #444 solid;
+}
+
+.comment:last-child {
+  border-bottom: 1px #444 solid;
+}
+
+.comment:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.comment p {
+  margin: 10px 0 0 0;
+}
+
+.commentAuthor {
+  margin: 0;
+}
+
+.commentForm {
+  margin: 10px 0 0 0;
+}
+
+.commentForm input {
+  display: block;
+  width: 40%;
+  line-height: 24px;
+  font-size: 14pt;
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+.commentForm button {
+  background-color: #44c767;
+	border-radius: 2px;
+	border: 1px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 17px;
+	padding: 10px 21px;
+	text-decoration:none;
+  outline: none;
+}
